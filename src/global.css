@@ -1,0 +1,211 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font: "Inter", sans-serif, Arial, Helvetica;
+
+  --clr-neutral-100: 228, 8%, 10%;
+  --clr-neutral-200: 228, 10%, 15%;
+  --clr-neutral-300: 228, 10%, 25%;
+  --clr-neutral-400: 228, 8%, 40%;
+  --clr-neutral-500: 228, 8%, 50%;
+  --clr-neutral-600: 228, 8%, 60%;
+  --clr-neutral-700: 228, 8%, 70%;
+  --clr-neutral-800: 228, 8%, 80%;
+  --clr-neutral-900: 228, 8%, 90%;
+
+  --clr-primary-100: 220, 100%, 10%;
+  --clr-primary-200: 220, 100%, 20%;
+  --clr-primary-300: 220, 100%, 30%;
+  --clr-primary-400: 220, 100%, 40%;
+  --clr-primary-500: 220, 100%, 50%;
+  --clr-primary-600: 220, 100%, 60%;
+  --clr-primary-700: 220, 100%, 70%;
+  --clr-primary-800: 220, 100%, 80%;
+  --clr-primary-900: 220, 100%, 90%;
+
+  font-size: 50%;
+}
+
+body {
+  background-color: hsl(var(--clr-neutral-100));
+  color: hsl(var(--clr-neutral-900));
+  font-family: var(--font);
+  font-size: 2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: inherit;
+}
+
+input,
+textarea,
+select,
+button {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input {
+  background-color: hsl(var(--clr-neutral-300));
+  padding: 0.5em 0.75em;
+  color: hsl(var(--clr-neutral-900));
+  border: none;
+}
+
+input:focus {
+  outline: 2px solid hsl(var(--clr-neutral-800));
+}
+
+img,
+button,
+picture,
+svg,
+video {
+  display: block;
+}
+
+@media screen AND (max-width: 650px) {
+  :root {
+    font-size: 25%;
+  }
+}
+
+/* ---  */
+
+body {
+  padding: 1em;
+}
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(var(--clr-neutral-200));
+  padding: 1em;
+  border-radius: 8px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 1em;
+}
+
+.countdown__header {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.countdown__list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2em;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.countdown__item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: hsl(var(--clr-neutral-100), 0.25);
+  border-radius: 4px;
+  padding: 1.5em;
+}
+
+.countdown__time {
+  font-size: 7rem;
+  font-weight: 600;
+}
+
+.countdown__label {
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: hsl(var(--clr-neutral-800));
+}
+
+.countdown__current {
+  text-align: center;
+  padding-top: 1em;
+  margin-top: 1em;
+  border-top: 1px solid hsl(var(--clr-neutral-300));
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1em 0;
+}
+
+.main__heading {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.main__panel {
+  padding: 1em;
+  width: 100%;
+  max-width: 500px;
+  background-color: hsl(var(--clr-neutral-200));
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__panel[data-disabled="true"] {
+  background-color: hsl(var(--clr-neutral-200), 0.5);
+  color: hsl(var(--clr-neutral-900), 0.4);
+}
+
+.main__fieldset {
+  border: none;
+  margin: 1em 0;
+  color: inherit;
+}
+
+.main__fieldset-group {
+  margin-bottom: 0.5em;
+}
+
+.main__fieldset label {
+  margin-right: 0.5em;
+  color: inherit;
+}
+
+.main__fieldset input:disabled {
+  opacity: 0.4;
+}
+
+.main__controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  margin-top: auto;
+}
+
+.main__controls button {
+  flex-grow: 1;
+  background-color: hsl(var(--clr-neutral-300));
+  border: none;
+  border-radius: 100vmax;
+  padding: 0.5em 0.75em;
+  color: hsl(var(--clr-neutral-900));
+  font-weight: 600;
+}
